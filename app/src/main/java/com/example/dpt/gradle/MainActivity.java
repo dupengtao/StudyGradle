@@ -1,10 +1,13 @@
 package com.example.dpt.gradle;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
+import com.example.dpt.gradle.detail.DetailActivity;
 
 
 public class MainActivity extends Activity {
@@ -24,6 +27,10 @@ public class MainActivity extends Activity {
         sBuilder.append("\n");
         sBuilder.append("BuildConfig.SERVER_URI : "+BuildConfig.SERVER_URI);
         tv.setText(sBuilder);
+    }
+
+    public void open(View v){
+        startActivity(new Intent(this, DetailActivity.class));
     }
 
     @Override
