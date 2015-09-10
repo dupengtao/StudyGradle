@@ -1,3 +1,10 @@
+# StudyGradle
+Study Android Gradle
+
+A demo for study android gradle
+
+eg.
+```groovy
 //声明插件类型，这里声明的是Android程序
 apply plugin: 'com.android.application'
 
@@ -9,17 +16,11 @@ android {
 
     defaultConfig {
         //应用包名
-        applicationId "com.example.dpt.gradle"
+        applicationId "com.example.dpt.studygradledemo"
         minSdkVersion 21
         targetSdkVersion 22
         versionCode 1
         versionName "1.0"
-        //自定义boolean型常量
-        buildConfigField ('boolean','AUTO_UPLOAD','false')
-        //自定义String型常量
-        buildConfigField('String','SERVER_URI','"默认 uri"')
-        //
-        resValue('string','app_name','MAX1')
     }
     buildTypes {//构建类型，常用的有release和debug两种，可以在这里面启用混淆，启用zipAlign以及配置签名信息等
         release {
@@ -33,25 +34,6 @@ android {
     // 移除lint检查的error
     lintOptions {
         abortOnError false
-    }
-
-    productFlavors{
-        max1 {
-            applicationId "com.example.dpt.gradle.max1"
-            //自定义boolean型常量
-            buildConfigField ('boolean','AUTO_UPLOAD','true')
-            //自定义String型常量
-            buildConfigField('String','SERVER_URI','"Max1 uri"')
-            //自定义res常量
-            resValue('string','app_name','MAX1')
-        }
-        x1 {
-            applicationId "com.example.dpt.gradle.x1"
-            //自定义String型常量
-            buildConfigField('String','SERVER_URI','"X1 uri"')
-            //自定义res常量
-            resValue('string','app_name','X1')
-        }
     }
 }
 
@@ -67,3 +49,4 @@ dependencies {
     compile project(':demolibrary')
     compile 'com.android.support:palette-v7:22.2.0'
 }
+```

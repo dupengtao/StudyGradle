@@ -2,7 +2,9 @@
 apply plugin: 'com.android.library'
 
 android {
+    //编译SDK版本
     compileSdkVersion 22
+    //build tools 的版本 对应Android SDK Build-tools
     buildToolsVersion "21.1.2"
 
     defaultConfig {
