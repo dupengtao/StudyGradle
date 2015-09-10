@@ -1,9 +1,10 @@
-package com.example.dpt.studygradledemo;
+package com.example.dpt.gradle;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 
 public class MainActivity extends Activity {
@@ -12,6 +13,17 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        TextView tv = (TextView) findViewById(R.id.tv);
+
+        StringBuilder sBuilder = new StringBuilder();
+        sBuilder.append(getResources().getString(R.string.hello_world));
+        sBuilder.append("\n");
+        sBuilder.append(getPackageName());
+        sBuilder.append("\n");
+        sBuilder.append("BuildConfig.AUTO_UPLOAD : "+BuildConfig.AUTO_UPLOAD);
+        sBuilder.append("\n");
+        sBuilder.append("BuildConfig.SERVER_URI : "+BuildConfig.SERVER_URI);
+        tv.setText(sBuilder);
     }
 
     @Override
